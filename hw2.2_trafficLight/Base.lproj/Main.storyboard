@@ -46,7 +46,7 @@
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="LwG-dU-Ucl"/>
-                                    <constraint firstAttribute="width" constant="264" id="ZIW-k1-T8z"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="ZIW-k1-T8z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="65"/>
                                 <state key="normal" title="START">
