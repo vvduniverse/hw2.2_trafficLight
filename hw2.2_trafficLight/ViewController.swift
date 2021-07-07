@@ -1,9 +1,3 @@
-//
-//  ViewController.swift
-//  hw2.2_trafficLight
-//
-//  Created by Tato Admin on 06.07.2021.
-//
 
 import UIKit
 
@@ -11,13 +5,8 @@ class ViewController: UIViewController {
 
     
     @IBOutlet weak var redColorLight: UIButton!
-    
     @IBOutlet weak var yellowColorLight: UIButton!
-    
-    
     @IBOutlet weak var greenColorLight: UIButton!
-    
-    
     @IBOutlet weak var startNextButtonProperty: UIButton!
     
     override func viewDidLoad() {
@@ -33,6 +22,28 @@ class ViewController: UIViewController {
 
     @IBAction func startNextButtonPressed() {
         startNextButtonProperty.setTitle("NEXT", for: .normal)
+        
+        let redColor = round(redColorLight.alpha * 10) / 10
+        let yellowColor = round(yellowColorLight.alpha * 10) / 10
+        let greenColor = round(greenColorLight.alpha * 10) / 10
+//        возможно есть более красивое преобразование к нужному формату?
+        
+        switch redColor {
+        case 1 where yellowColor == 0.3 && greenColor == 0.3:
+            redColorLight.alpha = 0.3
+            yellowColorLight.alpha = 1
+            greenColorLight.alpha = 0.3
+        case 0.3 where yellowColor == 1 && greenColor == 0.3:
+            redColorLight.alpha = 0.3
+            yellowColorLight.alpha = 0.3
+            greenColorLight.alpha = 1
+        case 0.3 where yellowColor == 0.3 && greenColor == 1:
+            redColorLight.alpha = 1
+            yellowColorLight.alpha = 0.3
+            greenColorLight.alpha = 0.3
+        default:
+            redColorLight.alpha = 1
+        }
     }
     
 }
